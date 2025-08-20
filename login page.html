@@ -5,70 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kala Kshetram | Login</title>
   <style>
+    /* Background with stationery vibe */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #3b0a0a; /* Maroon background like the logo */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      background-image: 
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* subtle paper texture */
+      color: #1b1b1b;
     }
 
+    /* Paper-style login card */
     .login-container {
-      background: #fff;
+      background: #fffdf7; /* off-white, like paper */
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      width: 350px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      width: 360px;
       text-align: center;
+      position: relative;
     }
 
+    /* Decorative pencil icon at top corner */
+    .login-container::before {
+      content: "✏️";
+      font-size: 26px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    /* Decorative notebook icon */
+    .login-container::after {
+      content: "📒";
+      font-size: 26px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Logo */
     .login-container img {
-      width: 200px;  /* Logo size */
-      margin-bottom: 15px;
+      width: 150px;
+      margin-bottom: 10px;
     }
 
+    /* Heading */
     .login-container h2 {
       margin-bottom: 15px;
       font-size: 24px;
-      color: #3b0a0a;
+      color: #388e3c; /* forest green */
     }
 
+    /* Input fields */
     .input-field {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
-      border: 1px solid #ccc;
+      border: 2px solid #c8e6c9; /* light green border */
       border-radius: 8px;
       font-size: 14px;
+      outline: none;
+      background: #f9fbe7; /* pale paper yellow */
     }
 
+    .input-field:focus {
+      border: 2px solid #388e3c;
+      background: #ffffff;
+    }
+
+    /* Button */
     .btn {
       width: 100%;
       padding: 12px;
-      margin-top: 20px;
-      background: #b8860b; /* Golden color like logo */
-      color: white;
+      margin-top: 15px;
+      background: linear-gradient(135deg, #fbc02d, #fdd835);
+      color: #1b1b1b;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover {
-      background: #a57c0c;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(251, 192, 45, 0.5);
     }
 
+    /* Extra links */
     .extra-links {
       margin-top: 20px;
       font-size: 13px;
+      color: #444;
     }
 
     .extra-links a {
-      color: #b8860b;
+      color: #388e3c;
       text-decoration: none;
       margin: 0 5px;
     }
@@ -80,10 +119,11 @@
 </head>
 <body>
   <div class="login-container">
-    <!-- Insert Logo -->
+    <!-- Logo -->
     <img src="logo.png" alt="Kala Kshetram Logo">
 
-    <h2>Login to Kala Kshetram</h2>
+    <h2>Welcome Back</h2>
+
     <form action="/login" method="POST">
       <input type="email" class="input-field" name="email" placeholder="Email Address" required>
       <input type="password" class="input-field" name="password" placeholder="Password" required>
@@ -97,6 +137,4 @@
   </div>
 </body>
 </html>
-
-
 
